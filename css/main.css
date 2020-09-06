@@ -1,0 +1,46 @@
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+header, footer, section {
+    padding: 16px;
+}
+
+.ontop {
+display: flex;
+}
+.logo{
+    width: 100%;
+    margin: 0;
+}
+.nav {
+    display: flex;
+}
+.nav div {
+    margin: 1rem;
+}
+.sign{
+    width: fit-content;
+    margin: 1rem;
+}
+
+.mob {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .desk {
+        display: none;
+    }
+    .mob {
+        display: unset;
+    }
+
+    .nav {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
