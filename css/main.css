@@ -9,8 +9,8 @@ body {
 }
 header > *, footer > *, body > section > * {
     padding: 0;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 a {
     text-decoration: none;
@@ -162,6 +162,7 @@ fieldset {
 .info {
     display: flex;
     font-weight: normal;
+    font-size: 0.9rem;
 }
 .info > div {
     color: #0065FC;
@@ -360,6 +361,11 @@ footer a {
     .mob {
         display: none;
     }
+    header > *, footer > *, body > section > * {
+        padding: 0;
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
     .nav div {
         padding-top: 2rem;
         border-top: #f2f2f2 solid 2px;
@@ -410,12 +416,11 @@ footer a {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        width: 100%;
     }
     .pop article {
-        min-width: 18rem;
+        min-width: 35%;
         max-width: 45%;
-        margin: 1rem;
+        margin: 1rem 0;
         flex: 1;
     }
     .wado {
@@ -458,6 +463,9 @@ footer a {
     }
     .pop__title h3 {
         margin: 1.5rem 0;
+    }
+    .pop__title > div {
+        margin-right: 0.5rem;
     }
     .pop article {
         margin: 1rem 0.5rem;
