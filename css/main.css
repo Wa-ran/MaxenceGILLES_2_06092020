@@ -16,6 +16,9 @@ a {
 a:visited {
     color: inherit;
 }
+h3 {
+    font-size: 1.5rem;
+}
 
 /* Header */
 .ontop {
@@ -60,6 +63,8 @@ fieldset {
     display: flex;
     align-items: center;
     max-width: 350px;
+    min-height: 2.5rem;
+    max-height: 2.5rem;
 }
 .search__input {
     display: flex;
@@ -69,23 +74,37 @@ fieldset {
 .search__input:nth-child(2) {
     width: 100%;
 }
-.search__input label, .search__input input, .search__btn {
-    padding: 0.7rem;
-}
 .search__input label {
     background: #f2f2f2;
+    border: #f2f2f2 solid 2px;
     border-radius: 15px 0 0 15px;
+    position: relative;
+    left: -2px;
+    height: 2.5rem;
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .search__input input {
     border: none;
     width: 100%;
     height: 100%;
+    padding-left: 0.7rem;
 }
 .search__btn {
     background: #0065FC;
     color: #ffffff;
+    border: #0065FC solid 2px;
     border-radius: 0 15px 15px 0;
     font-weight: normal;
+    height: 2.5rem;
+    min-width: 2.5rem;
+    position: relative;
+    right: -2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .select {
@@ -98,22 +117,36 @@ fieldset {
 }
 .filter {
     display: flex;
+    align-items: center;
     border: #d9d9d9 solid 2px;
     border-radius: 30px;
     outline-offset: 2px;
     width: fit-content;
+    min-height: 2.5rem;
+    max-height: 2.5rem;
     margin: 0.3rem 0;
-}
-.filter div {
-    padding: 0.7rem;
 }
 .filter__ico {
     background: #DEEBFF;
+    border: #DEEBFF solid 2px;
     border-radius: 100%;
     color: #0065FC;
+    min-width: 2.5rem;
+    max-width: 2.5rem;
+    min-height: 2.5rem;
+    max-height: 2.5rem;
+    position: relative;
+    left: -2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.filter__text {
+    padding: 0.7rem;
 }
 .info {
     display: flex;
+    font-weight: normal;
 }
 
 /* Corps */
@@ -165,7 +198,7 @@ fieldset {
     height: 100%;
 }
 
-.hotel .art__img {
+.hotel .art__img, .wado .art__img {
     overflow: hidden;
     border-radius: 15px 15px 0 0;
     height: 8rem;
@@ -175,6 +208,44 @@ fieldset {
 }
 .hotel .art__img img {
     width: 100%;
+}
+.plus {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.wado {
+    padding: 1rem;
+}
+.wado article {
+    background: #ffffff;
+    border-radius: 15px;
+    margin: 0.7rem 0;
+    box-shadow: #f2f2f2 1px 1px 8px, #f2f2f2 1px 1px 8px;
+}
+.wado .art__img img {
+    width: 100%;
+}
+.wado h4 {
+    margin: 0;
+    padding: 1rem;
+}
+
+footer {
+    background: #f2f2f2;
+    padding-bottom: 2rem;
+}
+footer > div {
+    display: flex;
+    flex-direction: column;
+}
+footer h4 {
+    margin: 2rem 0 0.5rem 0;
+}
+footer a {
+    padding: 0;
+    padding-top: 0.7rem;
+    font-size: 0.9rem;
 }
 
 
@@ -192,6 +263,9 @@ fieldset {
     .filter {
         margin-right: 1rem;
     }
+    .search__btn {
+        padding: 0 2rem;
+    }
     .main {
         display: flex;
         flex-direction: row-reverse;
@@ -201,12 +275,12 @@ fieldset {
     }
 
     .pop {
-        padding: 1.5rem;
+        padding: 15rem;
         margin-left: 2rem;
         min-width: 25%;
     }
     .pop article {
-        margin: 1.5rem 0;
+        margin: 15rem 0;
     }
     .pop h3 {
         margin-bottom: 0;
@@ -239,6 +313,9 @@ fieldset {
         display: none;
     }
 
+    .mob {
+        margin: 0;
+    }
     .nav {
         flex-direction: row;
     }
@@ -252,7 +329,7 @@ fieldset {
     }
 
     .search {
-        margin: auto;
+        margin: 1rem auto;
     }
     .search__btn {
         border-radius: 15px;
@@ -269,10 +346,22 @@ fieldset {
         margin-right: 0.5rem;
     }
 
+    .main {
+        margin: 1rem 0;
+    }
+    .pop {
+        border-radius: 0 0 0 0;
+    }
     .hotel {
         background: #ffffff;
     }
     .hotel article {
         box-shadow: #f2f2f2 1px 1px 8px, #f2f2f2 1px 1px 8px;
+    }
+    .plus {
+        padding-top: 1rem;
+    }
+    .wado {
+        margin: 0;
     }
 }
