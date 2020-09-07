@@ -1,7 +1,9 @@
 * {
     font-family: 'Raleway', sans-serif;
 }
-
+html {
+    width: 100%;
+}
 body {
     margin: 0;
 }
@@ -31,10 +33,13 @@ display: flex;
 }
 .nav {
     display: flex;
+    flex-direction: row;
 }
 .nav div {
     padding: 1rem;
     text-align: center;
+    border-bottom: #f2f2f2 solid 2px;
+    width: 100%;
 }
 .nav div:hover {
     color: #0065FC;
@@ -47,7 +52,6 @@ display: flex;
     color: #0065FC;
     font-weight: bold;
     text-decoration: none;
-    border-top: #f2f2f2 solid 2px;
 }
 .sign:hover, .sign:focus {
     border-color: #0065FC;
@@ -65,6 +69,7 @@ fieldset {
     max-width: 350px;
     min-height: 2.5rem;
     max-height: 2.5rem;
+    margin: 1rem auto;
 }
 .search__input {
     display: flex;
@@ -96,7 +101,7 @@ fieldset {
     background: #0065FC;
     color: #ffffff;
     border: #0065FC solid 2px;
-    border-radius: 0 15px 15px 0;
+    border-radius: 15px;
     font-weight: normal;
     height: 2.5rem;
     min-width: 2.5rem;
@@ -110,10 +115,12 @@ fieldset {
 .select {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 0;
 }
 .select p {
     margin-bottom: 0.5rem;
     margin-right: 1rem;
+    width: 100%;
 }
 .filter {
     display: flex;
@@ -125,6 +132,7 @@ fieldset {
     min-height: 2.5rem;
     max-height: 2.5rem;
     margin: 0.3rem 0;
+    margin-right: 0.5rem;
 }
 .filter__ico {
     background: #DEEBFF;
@@ -150,12 +158,14 @@ fieldset {
 }
 
 /* Corps */
-.pop, .hotel {
+.main {
+    margin: 1rem 0;
+}
+.pop {
     background: #f2f2f2;
-    border-radius: 15px;
     padding: 1rem;
 }
-.pop article, .hotel article {
+.pop article {
     background: #ffffff;
     border-radius: 15px;
     margin: 0.7rem 0;
@@ -198,7 +208,19 @@ fieldset {
     height: 100%;
 }
 
-.hotel .art__img, .wado .art__img {
+.hotel {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 1rem;
+}
+.hotel article {
+    background: #ffffff;
+    border-radius: 15px;
+    margin: 0.7rem 0;
+    padding: 0.3rem;
+    box-shadow: #f2f2f2 1px 1px 8px, #f2f2f2 1px 1px 8px;
+}
+.hotel .art__img {
     overflow: hidden;
     border-radius: 15px 15px 0 0;
     height: 8rem;
@@ -212,21 +234,31 @@ fieldset {
 .plus {
     font-size: 1.1rem;
     font-weight: bold;
+    padding-top: 1rem;
 }
 
 .wado {
+    margin: 0;
     padding: 1rem;
 }
-.wado article {
+.wado__loc article {
     background: #ffffff;
     border-radius: 15px;
     margin: 0.7rem 0;
     box-shadow: #f2f2f2 1px 1px 8px, #f2f2f2 1px 1px 8px;
 }
-.wado .art__img img {
+.wado__loc .art__img {
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wado__loc .art__img img {
     width: 100%;
 }
-.wado h4 {
+.wado__loc h4 {
     margin: 0;
     padding: 1rem;
 }
@@ -248,13 +280,74 @@ footer a {
     font-size: 0.9rem;
 }
 
+.desk {
+    display: none;
+}
+.mob {
+    margin: 0;
+}
+
+
+
 
 @media (min-width: 480px) {
+    .hotel {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .hotel h3, .plus {
+        width: 100%;
+        margin: 1rem 0;
+    }
+    .hotel article {
+        max-width: 45%;
+        height: fit-content;
+        min-width: 12rem;
+    }    
+    .wado h3 {
+        width: 100%;
+    }
+    .wado__loc {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .wado__loc > div {
+        display: flex;
+        justify-content: space-between;
+    }
+    .space {
+        width: 2rem;
+    }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+    .pop .art__img {
+        max-width: 40%;
+        display: flex;
+        align-items: center;
+    }
+    .pop .art__img img {
+        height: unset;
+        width: 120%;
+    }
+}
+
+@media (min-width: 768px) {
+    .desk {
+        display: unset;
+    }
     .mob {
         display: none;
     }
     .nav div {
         padding-top: 2rem;
+        border-top: #f2f2f2 solid 2px;
+        border-bottom: none;
+    }
+    .sign, .sign a:visited {
         border-top: #f2f2f2 solid 2px;
     }
     .select {
@@ -263,8 +356,72 @@ footer a {
     .filter {
         margin-right: 1rem;
     }
+    .search {
+        margin: 0;
+    }
     .search__btn {
+        border-radius: 0 15px 15px 0;
         padding: 0 2rem;
+    }
+    .main {
+        margin: 2rem;
+    }
+    .pop {
+        border-radius: 15px;
+    }
+    .pop__title {
+        width: 100%;
+    }
+    .hotel {
+        background: #f2f2f2;
+    }
+    .hotel article {
+        box-shadow: #d9d9d9 1px 1px 8px, #d9d9d9 1px 1px 8px;
+    }
+    footer {
+        display: flex;
+    }
+    footer > div {
+        width: 30%;
+    }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+    .pop {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .pop article {
+        min-width: 18rem;
+        max-width: 45%;
+        margin: 1rem;
+        flex: 1;
+    }
+    .wado {
+        margin: 1rem;
+    }
+    .wado__loc {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .wado__loc > :nth-child(odd) {
+        max-width: 30%;
+    }
+    .wado__loc > :nth-child(even) {
+        min-width: 50%;
+        flex: 1;
+        margin-left: 1rem;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .select p {
+        width: auto
     }
     .main {
         display: flex;
@@ -273,95 +430,84 @@ footer a {
     .info {
         margin-bottom: 1rem;
     }
-
     .pop {
-        padding: 15rem;
+        padding: 1rem 1.5rem;
         margin-left: 2rem;
         min-width: 25%;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+    .pop__title h3 {
+        margin: 1.5rem 0;
     }
     .pop article {
-        margin: 15rem 0;
+        margin: 1rem 0.5rem;
     }
-    .pop h3 {
-        margin-bottom: 0;
-    }
-    .hotel{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 1rem;
-        height: 35.5rem;
-    }
-    .hotel h3, .hotel .plus {
-        width: 100%;
-        margin: 1rem;
+    
+    .hotel h3, .plus {
+        margin: 1.5rem 1rem;
     }
     .hotel article {
         width: 30%;
-        height: fit-content;
-        min-width: 12rem;
         flex: 1;
         margin: 1rem;
     }
     .hotel .art__img {
         height: 6.5rem;
     }
-}
-
-@media (max-width: 480px) {
-    .desk {
-        display: none;
-    }
-
-    .mob {
-        margin: 0;
-    }
-    .nav {
-        flex-direction: row;
-    }
-    .nav div {
-        border-bottom: #f2f2f2 solid 2px;
-        width: 100%;
-        padding-top: 1rem;
-    }
-    .sign {
-        border-top: none;
-    }
-
-    .search {
-        margin: 1rem auto;
-    }
-    .search__btn {
-        border-radius: 15px;
-    }
-
-    .select {
-        margin-top: 0;
-    }
-    .select p {
-        width: 100%;
-    }
-    
-    .filter {
-        margin-right: 0.5rem;
-    }
-
-    .main {
-        margin: 1rem 0;
-    }
-    .pop {
-        border-radius: 0 0 0 0;
-    }
-    .hotel {
-        background: #ffffff;
-    }
-    .hotel article {
-        box-shadow: #f2f2f2 1px 1px 8px, #f2f2f2 1px 1px 8px;
-    }
     .plus {
-        padding-top: 1rem;
+        padding-top: 0;
     }
     .wado {
+        margin: 1rem;
+    }
+    .wado__loc {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .wado__loc > div {
+        width: 23%;
+        height: 30rem;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .wado__loc a {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+    .wado__loc > :nth-child(odd) .art__img {
+        height: 100%;
+    }
+    .wado__loc > :nth-child(4) .art__img {
+        max-height: 10rem;
+    }
+    .wado__loc > :nth-child(even) .art__img img {
+        width: 100%;
+    }
+    .wado__loc article {
+        height: 100%;
         margin: 0;
+    }
+    .wado__loc .art__img img {
+        width: auto;
+    }
+    .wado__loc .big {
+        min-height: 60%;
+    }
+    .wado__loc .thin {
+        max-height: 30%;
+    }
+    .wado__loc .art__img {
+        height: 100%;
+    }
+    .space {
+        min-height: 2rem;
+    }
+    footer {
+        margin-top: 2rem;
     }
 }
