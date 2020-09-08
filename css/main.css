@@ -191,14 +191,12 @@ fieldset {
     margin: 0.7rem 0;
     padding: 0.3rem;
     box-shadow: #d9d9d9 1px 1px 8px, #d9d9d9 1px 1px 8px;
+    height: 8rem;
 }
 .pop__title {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.pop article {
-    height: 8rem;
 }
 .pop a {
     display: flex;
@@ -485,7 +483,8 @@ footer a {
         margin: 1.5rem 1rem;
     }
     .hotel article {
-        width: 30%;
+        min-width: 25%;
+        max-width: 30%;
         flex: 1;
         margin: 1rem;
     }
